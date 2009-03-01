@@ -15,6 +15,7 @@ class Codex::Content
   def to_html
     textile = Codex::Filters.instance.filter_all(@original)
     slides = split_into_slides(textile)
+    slides = repeat_slides(slides)
     content = join_slides(slides)
     html = RedCloth.new(content).to_html
   end
@@ -32,14 +33,21 @@ class Codex::Content
       accum
     end
   end
-
-  def join_slides(slides)
+  
+  def repeat_slides(slides)
     result = []
     slides.each_with_index do |slide_data, index|
       delim, slide = slide_data
-      result << START_SLIDE << "\nh1"
-      result << slides[index - 1][1] if delim == REPEAT_SLIDE_MARKER and index > 0
-      result << slide << END_SLIDE
+      slide = result[index - 1] + slide if delim == REPEAT_SLIDE_MARKER and index > 0
+      result << slide
+    end
+    result
+  end
+  
+  def join_slides(slides)
+    result = []
+    slides.each do |slide|
+      result << START_SLIDE << "\nh1" << slide << END_SLIDE
     end
     result.join
   end
