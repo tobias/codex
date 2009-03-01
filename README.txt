@@ -2,6 +2,9 @@
 
 http://github.com/pragdave/codex
 
+Note: this version (http://github.com/tobias/codex) differs from
+pragdave's version by allowing repetition of the previous slide.
+
 == Description
 
 This is a remarkably trivial package that makes simply HTML-based presentations from

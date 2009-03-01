@@ -25,7 +25,7 @@ h1. @.slides@ files
 * Each @.slides@ file is a separate chunk of the presentation
 * The first @h1.@ heading is the banner page for that chunk
 * Each subsequent @h1.@ starts a new slide
-
+* A new slide can also be marked with @&::@ instead of @h1.@, causing the previous slide to be prepended to it
 
 h1. Table of Contents
 
