@@ -4,7 +4,7 @@ class Codex::Content
   START_SLIDE = %{<div class="slide">\n}
   END_SLIDE   = %{</div>\n}
   BETWEEN_SLIDES = END_SLIDE + "\n" + START_SLIDE
-  HEADING_MARKER = 'h1\. '
+  HEADING_MARKER = 'h1'
   REPEAT_SLIDE_MARKER = '&::'
   SPLIT_REGEX = /^(#{HEADING_MARKER}|#{REPEAT_SLIDE_MARKER})/
   
@@ -21,13 +21,13 @@ class Codex::Content
   
   def split_into_slides(textile)
     delims_and_slides = textile.split(SPLIT_REGEX)
-    #ditch anything before first delim
     delims_and_slides[1..-1].inject([]) do |accum, s|
-      last_el = accum.pop
+      last_el = accum.last
       if last_el.is_a?(String)
+        accum.pop
         accum << [last_el, s]
       else
-        accum << last_el << s
+        accum << s
       end
       accum
     end
@@ -37,7 +37,7 @@ class Codex::Content
     result = []
     slides.each_with_index do |slide_data, index|
       delim, slide = slide_data
-      result << START_SLIDE << "\nh1. "
+      result << START_SLIDE << "\nh1"
       result << slides[index - 1][1] if delim == REPEAT_SLIDE_MARKER and index > 0
       result << slide << END_SLIDE
     end
