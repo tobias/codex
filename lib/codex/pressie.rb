@@ -51,9 +51,19 @@ S5_HEAD = %{<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 S5_TAIL = %{
   <!-- Syntax Highlighter -->
   <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shCore.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushCSharp.js"></script>
   <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushCpp.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushCss.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushDelphi.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushJava.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushPython.js"></script>
   <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushRuby.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushSql.js"></script>
+  <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushVb.js"></script>
   <script language="javascript" src="../dp.SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+
   <script language="javascript">
   dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
   dp.SyntaxHighlighter.HighlightAll('code');
