@@ -5,7 +5,7 @@ class Codex::Content
   END_SLIDE   = %{</div>\n}
   BETWEEN_SLIDES = END_SLIDE + "\n" + START_SLIDE
   HEADING_MARKER = 'h1'
-  REPEAT_SLIDE_MARKER = '&::'
+  REPEAT_SLIDE_MARKER = '<<'
   SPLIT_REGEX = /^(#{HEADING_MARKER}|#{REPEAT_SLIDE_MARKER})/
   
   def initialize(original)
