@@ -24,7 +24,7 @@ To create new presentations:
   s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{codex}
-  s.rubygems_version = %q{1.1.1}
+  s.rubygems_version = %q{1.3.1}
   s.summary = %q{Simple tool for creating source-code intensive presentations and courses}
   s.test_files = ["test/test_codex.rb", "test/test_codex_generator.rb", "test/test_generator_helper.rb", "test/test_helper.rb"]
 end
